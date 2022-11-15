@@ -1,31 +1,15 @@
-import { Typography, Divider } from 'antd';
-import './App.css';
-import TodoList from './components/TodoList';
-import Filters from './components/Filters';
-
-const { Title } = Typography;
+import { Routes, Route } from 'react-router-dom';
+import PieChart from './components/Charts/PieChart';
+import { Home } from './page/Home';
 
 function App() {
-  return (
-    <div
-      style={{
-        width: 500,
-        margin: '0 auto',
-        display: 'flex',
-        flexDirection: 'column',
-        backgroundColor: 'white',
-        padding: 20,
-        boxShadow: '0 0 10px 4px #bfbfbf',
-        borderRadius: 5,
-        height: '90vh',
-      }}
-    >
-      <Title style={{ textAlign: 'center' }}>TODO APP with REDUX</Title>
-      <Filters />
-      <Divider />
-      <TodoList />
-    </div>
-  );
+    
+    return (
+        <Routes>
+            <Route path="/" element={<Home/>}/>
+            <Route path='/chart' element={<PieChart/>}/>
+        </Routes>
+    );
 }
 
 export default App;
